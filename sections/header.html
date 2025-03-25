@@ -1,0 +1,92 @@
+<nav class="container sticky-top navbar navbar-expand-lg navbar-light">
+  <div class="flex-column w-100">
+    
+    <!-- Top Section -->
+    <div class="d-flex justify-content-between align-items-center w-100 py-2">
+      <!-- Logo -->
+      <a class="navbar-brand d-flex align-items-center" href="#" onclick="loadContent('home.html')">
+        <img src="/static/images/cropped-logo-1-2.jpg" alt="Logo" width="80" height="80" class="me-2">
+        <span id="councilName" class="d-none d-lg-inline-block"></span>
+      </a>
+      
+      <!-- Desktop Language Buttons -->
+      <div class="d-none d-md-flex align-items-center lang-item">
+        <button class="primary-btn active-lang mx-2" onclick="setLanguage('en')">English</button>
+        <button class="primary-btn active-lang mx-2" onclick="setLanguage('si')">සිංහල</button>
+        <button class="primary-btn active-lang mx-2" onclick="setLanguage('ta')">தமிழ்</button>
+      </div>
+
+      <!-- Mobile Language Dropdown -->
+      <div class="d-flex align-items-center lang-item d-md-none">
+        <button class="primary-btn mx-2" id="mobileLanguageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          Language
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="mobileLanguageDropdown">
+          <li><a class="dropdown-item" href="#" onclick="setLanguage('en')">English</a></li>
+          <li><a class="dropdown-item" href="#" onclick="setLanguage('si')">සිංහල</a></li>
+          <li><a class="dropdown-item" href="#" onclick="setLanguage('ta')">தமிழ்</a></li>
+        </ul>
+      </div>
+
+      <!-- Mobile Hamburger (Right) -->
+      <button class="navbar-toggler mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+
+    <!-- Bottom Section (Nav Items) -->
+    <div class="bottom-nav navbar navbar-expand-lg navbar-light w-100 collapse navbar-collapse bg-light" id="navbarNavDropdown">
+      <ul class="navbar-nav mx-auto" id="navItems">
+        <!-- Nav items injected dynamically -->
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+<!-- Mobile Menu (Slider from Right to Left) -->
+<div class="mobile-menu">
+  <button class="close-btn" onclick="closeMobileMenu()">×</button>
+  <div class="d-flex flex-column align-items-center justify-content-center">
+    <ul class="navbar-nav w-100 text-center">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Services</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+      <!-- Language Selector in Mobile Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="mobileLanguageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Language
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="mobileLanguageDropdown">
+          <li><a class="dropdown-item" href="#" onclick="setLanguage('en')">English</a></li>
+          <li><a class="dropdown-item" href="#" onclick="setLanguage('si')">සිංහල</a></li>
+          <li><a class="dropdown-item" href="#" onclick="setLanguage('ta')">தமிழ்</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+<script>
+  // Toggle Mobile Menu (Slider)
+const mobileMenu = document.querySelector('.mobile-menu');
+const menuToggler = document.querySelector('.navbar-toggler');
+
+menuToggler.addEventListener('click', function() {
+  mobileMenu.classList.add('active');
+});
+
+// Close Mobile Menu
+function closeMobileMenu() {
+  mobileMenu.classList.remove('active');
+}
+
+</script>
