@@ -158,16 +158,35 @@ i {
   pointer-events: none;
 }
 
+#header {
+  background-color: #000000;
+  padding-bottom:  2em;
+}
+.animated-text-header {
+  background: linear-gradient(90deg, #d6d5dd, #9f8ecc, #ec869e);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 2em auto;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-shift 4s ease infinite;
+  line-height: 1.2;
+}
+.slider {
+  background-color: #CECECE ;
+}
+
 .bottom-nav {
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 4px;
-  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+  box-shadow: 0 4px 10px rgba(222, 224, 225, 0.3);
   transition: top 0.3s ease-in-out;
   width: 100%;
   z-index: 1000;
-  background: linear-gradient(90deg, #023265, #0f024de4, #01264d);
+  background: linear-gradient(90deg, #d6d5dd, #dfdce8, #939292);
   background-size: 300% 300%;
   animation: gradientAnimation 6s ease infinite;
 }
@@ -176,16 +195,21 @@ i {
   width: 100%;
   max-width: 800px;
   overflow: hidden;
-  background-color: #ffffff;
+  background-color: #000000;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .slider-content {
-  display: inline-flex;
-  white-space: nowrap;
-  animation: slide 20s linear infinite;
-  width: max-content;
+  display: flex;
+  width: fit-content;
+}
+
+.slider-track {
+  display: flex;
+  flex-wrap: nowrap;
+  animation: slide 15s linear infinite;
 }
 
 .slider-item {
@@ -195,6 +219,10 @@ i {
   border-right: 1px solid #e0e0e0;
   display: flex;
   align-items: center;
+  white-space: nowrap;
+  flex-shrink: 0;
+  color: #ffffff !important;
+
 }
 
 .slider-item:last-child {
@@ -206,25 +234,29 @@ i {
   color: #4a90e2;
 }
 
+/* Smooth scrolling effect */
 @keyframes slide {
   0% {
-      transform: translateX(0%);
+      transform: translateX(0);
   }
   100% {
-      transform: translateX(-100%);
+      transform: translateX(-50%);
   }
 }
 
-.slider-container:hover .slider-content {
+/* Pause on hover */
+.slider-container:hover .slider-track {
   animation-play-state: paused;
 }
 
+/* Responsive */
 @media (max-width: 600px) {
   .slider-item {
       padding: 10px 15px;
       font-size: 14px;
   }
 }
+
 
 /* Navbar Items */
 #navItems {
@@ -238,7 +270,7 @@ i {
 }
 
 #navItems li a{
-  color: #fff;
+  color: #000;
 }
 
 /* Mobile Menu (Slider from Right) */
@@ -321,7 +353,7 @@ i {
 }
 
 nav a:hover {
-  color: var(--sky-blue-lighter) !important;
+  color: var(--sky-blue-dark) !important;
 }
 nav a:active {
   color: var(--sky-blue-darker) !important;
@@ -332,9 +364,6 @@ nav a:active {
   padding: 0;
 }
 
-#content {
-  margin-top: 30px;
-}
 
 .active-lang {
   font-weight: bold;
@@ -354,11 +383,11 @@ nav a:active {
 }
 
   /* Nested submenu styles */
- .dropdown-menu  {
+ /* .dropdown-menu  {
   background: linear-gradient(90deg, #023265, #0f024de4, #01264d);
   background-size: 300% 300%;
   animation: gradientAnimation 6s ease infinite;
- }
+ } */
 
   .dropdown-submenu .dropdown-menu {
   top: 0;
@@ -378,7 +407,6 @@ nav a:active {
 
 .carousel-boxed {
   max-width: 100%;
-  margin: 2rem auto;
   border-radius: 4px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -432,59 +460,66 @@ background-color: #4d0202bb;
   height: 120px;
   object-fit: cover;
 }
-.notice .carousel{
-margin-bottom:  4em;
-margin-top: 4em;
+.notice-alert {
+  /* background: linear-gradient(90deg, #65022fa5, #4d0202bb, #bd091bf5); */
+  background: #000;
 }
 
-.card-title{
+.news .card-title{
   margin-top:  1em;
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--letter-spacing-wide);
+  color: #fff;
+}
+
+.news .card-text{
+  color: #fff;
 }
 
 .news-card {
-  color: #fff !important;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
-  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out, color 0.3s ease-in-out;
-  background: linear-gradient(90deg, #023265, #0f024de4, #01264d);
-  background-size: 300% 300%;
-  animation: gradientAnimation 6s ease infinite;
+  background-color: #008000;
+}
+.news-card-1 {
+  background-color: #0981D1;
 }
 
-.news-card:hover {
-  transform: translateY(-5px);
-  background: linear-gradient(90deg, #7b032570, #bd091b31, #b60909bb); /* Red gradient on hover */
-  color: #000 !important;
+.news-card-2 {
+  background-color: #FFAA1D;
+}
+.news-card-3 {
+  background-color: #660000;
 }
 
-.news-card:hover i {
-  color: #000; /* Change the icon color to white */
+.news-card {
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-.news-card:hover p,
-.news-card:hover h3 {
-  color: #000; /* Update text color to white */
+.card:hover {
+  background-color: white !important;
+  color: black !important;
 }
 
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+/* Ensure text and icons remain visible on hover */
+.news-card:hover i,
+.news-card:hover h5,
+.news-card:hover p {
+  color: black !important;
+}
+.news-card-1:hover i,
+.news-card-1:hover h5,
+.news-card-1:hover p {
+  color: black !important;
+}
+.news-card-2:hover i,
+.news-card-2:hover h5,
+.news-card-2:hover p {
+  color: black !important;
+}.news-card-3:hover i,
+.news-card-3:hover h5,
+.news-card-3:hover p {
+  color: black !important;
 }
 
-.news-card img {
-  height: 200px;
-  object-fit: cover;
-}
 
 .chairman-section {
   background-color: #000;
@@ -574,12 +609,11 @@ margin-top: 4em;
 }
 
 .animated-text {
-  text-transform: uppercase;
-  letter-spacing: 3px;
   background: linear-gradient(90deg, #422de2, #3c00e0, #ff144b);
   background-size: 300% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin: 2em auto;
   background-clip: text;
   color: transparent;
   animation: gradient-shift 4s ease infinite;

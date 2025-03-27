@@ -26,35 +26,32 @@
     {
       "text": "සෙවාවන්",
       "sub_menu": [
-        { "text": "පාර", "link": "roads.md" },
+        { "text": "මාර්ග", "link": "roads.md" },
         { "text": "පොදු වෙළඳපොළ", "link": "public_markets.md" },
-        { "text": "ක්‍රීඩා පිටියන්", "link": "playgrounds.md" },
-        { "text": "පෙර පාසල", "link": "preschool.md" },
+        { "text": "ක්‍රීඩා පහසුකම්", "link": "playgrounds.md" },
+        { "text": "ළදරු පාසල", "link": "preschool.md" },
         { "text": "පුස්තකාලය", "link": "library.md" },
-        { "text": "වීදි විදුලි පහන්", "link": "street_lights.md" },
+        { "text": "වීථි ආලෝකය", "link": "street_lights.md" },
         { "text": "ප්‍රතිචක්‍රීකරණය", "link": "recycling.md" },
         { "text": "සෞඛ්‍ය", "link": "health.md" },
-        { "text": "නගර සභා මන්දිරය", "link": "town_hall.md" }
+        { "text": "නගර ශාලාව", "link": "town_hall.md" }
       ]
     },
     {
-      "text": "ලියාපදිංචි කිරීම",
-      "link": "registration.md"
-    },
-    {
-      "text": "ගෙවීම්",
-      "sub_menu": [
-        { "text": "ඇසස්මෙන්ට් ගෙවීම්", "link": "assessment_payments.md" },
-        { "text": "බූතික් බදු ගෙවීම්", "link": "boutique_rent_payments.md" }
-      ]
-    },
-    {
-      "text": "මූලික සේවා",
-      "link": "online_services.md"
+      "text": "අන්තර්ජාල සේවා",
+      "link": "/services"
     },
     {
       "text": "පැමිණිලි",
       "link": "complaints.md"
+    },
+    {
+      "text": "බාගතකිරීම්",
+      "link": "online_services.md"
+    },
+    {
+      "text": "ගැලරිය",
+      "link": "gallery.md"
     },
     {
       "text": "අපව අමතන්න",
