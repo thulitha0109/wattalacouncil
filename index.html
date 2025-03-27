@@ -17,18 +17,34 @@
   <!-- Header -->
   <div id="header"></div>
 
+  <div class="preloader" id="preloader">
+    <div class="spinner">
+    </div>
+  </div>
+
   <!-- Content Area -->
   <div class="Section" id="content">
-    <div class="d-flex justify-content-center">
-      <div class="spinner-border" role="status">
-      </div>
-    </div>
   </div>
 
   <!-- Footer -->
   <div class="footer" id="footer"></div>
 
   <!-- Scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const preloader = document.getElementById('preloader');
+        const content = document.getElementById('content');
+
+        // Simulate content loading (replace with actual loading logic)
+        window.addEventListener('load', () => {
+            // Simulate additional loading time
+            setTimeout(() => {
+                preloader.classList.add('hidden');
+                content.style.display = 'block';
+            }, 1500);
+        });
+    });
+</script>
   <script src="static/js/markdown.js"></script>
   <script src="static/js/bootstrap.bundle.min.js"></script>
   <script src="static/js/script.js"></script>
