@@ -208,7 +208,7 @@ i {
 }
 
 nav a:hover {
-  color: var(--sky-blue-darker) !important;
+  color: var(--sky-blue-lighter) !important;
 }
 nav a:active {
   color: var(--sky-blue-darker) !important;
