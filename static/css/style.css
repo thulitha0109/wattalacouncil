@@ -286,17 +286,18 @@ nav a:active {
 }
 
 .carousel-indicators [data-bs-target] {
+background-color: #4d0202bb;
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  border: 1px solid (var(--sky-blue-border));
+  border: 1px solid (var(--sky-blue-accent));
   opacity: 1;
   margin: 0 6px;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .carousel-indicators .active {
-  background-color : var(--sky-blue);
+  background-color : #bd091bf5;
   transform: scale(1.2); /* Slightly enlarge active dot */
 }
 
