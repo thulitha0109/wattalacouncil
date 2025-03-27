@@ -61,6 +61,8 @@ function loadNav(lang = null) {
       // Update council name
       const councilName = document.getElementById('councilName');
       if (councilName) councilName.textContent = data.name;
+      const icon = document.getElementById('icon');
+      if (icon) icon.textContent = data.name;
 
       // Update nav links
       const navContainer = document.getElementById('navItems');
