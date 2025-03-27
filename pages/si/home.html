@@ -155,55 +155,82 @@
 
 <!-- services -->
 <div class="container services">
-  <h1 class="service-title text-center mt-4 mb-4">අපගේ සේවා</h1>
-  <div class="row justify-content-center mt-4">
-    <div class="col-md-4">
-        <div class="service-box">
-            <img src="/static/images/roadnew.png" alt="Road" class="service-img">
-            <h4>පාර</h4>
-            <p>මූලික හා පාර සංවර්ධන සේවා.</p>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="service-box">
-            <i class="bi bi-shop fs-2"></i>
-            <h4>පොදු වෙළඳසැල්</h4>
-            <p>පොදු වෙළඳ හා වාණිජ ව්‍යාපාර සඳහා වෙළඳසැල්.</p>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="service-box">
-            <img src="/static/images/buildingnew.png" alt="Road" class="service-img">
-            <h4>කාලීන ක්ෂේම කාමර</h4>
-            <p>රැඳවුම් සහ ක්‍රීඩා කටයුතු සඳහා ආරක්ෂිත ක්ෂේම කාමර.</p>
-        </div>
-    </div>
-</div>
-<div class="row justify-content-center mt-4">
-    <div class="col-md-4">
-        <div class="service-box">
-            <i class="bi bi-gem fs-2"></i>
-            <h4>මැණික්</h4>
-            <p>වාණිජ හා පෞද්ගලික ගෘහ නිර්මාණ.</p>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="service-box">
-            <img src="/static/images/machinerynew.png" alt="Road" class="service-img">
-            <h4>යන්ත්‍රණය</h4>
-            <p>ඉදිකිරීම් ව්‍යාපාර සඳහා හරස් යන්ත්‍ර.</p>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="service-box">
-          <img src="/static/images/residential-homenw.png" alt="Road" class="service-img">
-            <h4>පෞද්ගලික ගෘහ</h4>
-            <p>පවුල් සඳහා නිවාස හා ප්‍රාණීය නිවාස.</p>
-        </div>
-    </div>
+  <h1 class="text-center my-4">අපගේ සේවා</h1>
+  
+  <div class="row initial-services">
+      <div class="col-md-4">
+          <div class="service-box">
+              <img src="/static/images/roadnew.png" alt="පාර" class="service-img">
+              <div class="service-overlay">
+                  <h4>පාර</h4>
+                  <p>සුවිශේෂී සැලසුම් සහිත මාර්ග සංවර්ධන කටයුතු.</p>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class="service-box">
+              <img src="/static/images/buildingnew.png" alt="කාලීන ක්ෂේම කාමර" class="service-img">
+              <div class="service-overlay">
+                  <h4>කාලීන ක්ෂේම කාමර</h4>
+                  <p>අති නවීන සහ ආරක්ෂිත රැඳවුම් පහසුකම්.</p>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class="service-box">
+              <img src="/static/images/residential-homenw.png" alt="පෞද්ගලික ගෘහ" class="service-img">
+              <div class="service-overlay">
+                  <h4>පෞද්ගලික ගෘහ</h4>
+                  <p>සුන්දර සහ ආදරණීය පවුල් නිවාස.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="row additional-services">
+      <div class="col-md-4">
+          <div class="service-box">
+              <img src="/static/images/machinerynew.png" alt="යන්ත්‍රණය" class="service-img">
+              <div class="service-overlay">
+                  <h4>යන්ත්‍රණය</h4>
+                  <p>නවීන තාක්ෂණයෙන් යුක්ත යන්ත්‍ර සැපයීම.</p>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class="service-box">
+              <img src="/api/placeholder/400/250" alt="පොදු වෙළඳසැල්" class="service-img">
+              <div class="service-overlay">
+                  <h4>පොදු වෙළඳසැල්</h4>
+                  <p>වාණිජ හා සමාජ අවශ්‍යතා සඳහා නවීන වෙළඳසැල්.</p>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class="service-box">
+              <img src="/api/placeholder/400/250" alt="මැණික්" class="service-img">
+              <div class="service-overlay">
+                  <h4>මැණික්</h4>
+                  <p>විශිෂ්ට ගෘහ නිර්මාණ සහ අලංකරණ.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="load-more">
+      <button id="loadMoreBtn" class="btn btn-primary">තවත් සේවා පෙන්වන්න</button>
+  </div>
 </div>
 
-</div>
+<script>
+  document.getElementById('loadMoreBtn').addEventListener('click', function() {
+      const additionalServices = document.querySelector('.additional-services');
+      const btnText = this.textContent;
+
+      additionalServices.classList.toggle('show');
+      this.textContent = btnText === 'තවත් සේවා පෙන්වන්න' ? 'සේවා සඟවන්න' : 'තවත් සේවා පෙන්වන්න';
+  });
+</script>
 
 <!-- Chairman -->
 <div class="container w-100 chairman-section text-center py-5">
