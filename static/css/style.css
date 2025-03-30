@@ -357,7 +357,7 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   }
   .carousel-item img {
-    object-fit: cover;
+    object-fit: contain;
     width: 100%;
   }
   .carousel-caption {
@@ -451,7 +451,7 @@
   .vision .vision-img {
     width: 100px;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
   }
   
   /* Ensure text and icons remain visible on hover */
