@@ -52,6 +52,35 @@ function loadContent(pageName, lang = null) {
 
 
 // Load nav dynamically
+// Function to close the mobile navigation slider
+function closeMobileNav() {
+  document.getElementById('menuItems').classList.remove('show');
+}
+
+// Attach closeMobileNav function to each nav-item dynamically
+function attachCloseNav() {
+  // Get all the nav items
+  const navItems = document.getElementsByClassName('nav-item');
+  
+  // Loop through each nav item and add the onclick event
+  for (let i = 0; i < navItems.length; i++) {
+    navItems[i].onclick = closeMobileNav; // Set the onclick event to close the nav
+  }
+}
+// Close the nav when clicking outside the mobile menu
+document.addEventListener('click', function (event) {
+  let menu = document.getElementById('menuItems');
+  let toggleButton = document.querySelector('.mobile-menu');
+  let mobileNav = document.querySelector('.mobile-nav-container');
+
+  // If the click is outside the mobile menu or the menu toggle button, close the menu
+  if (!mobileNav.contains(event.target) && !toggleButton.contains(event.target)) {
+    closeMobileNav();
+  }
+});
+
+// Call this function when the page loads or when the nav items are dynamically created
+
 function loadNav(lang = null) {
   if (!lang) lang = localStorage.getItem('language') || 'si';
 
@@ -65,9 +94,12 @@ function loadNav(lang = null) {
       if (icon) icon.textContent = data.name;
 
       // Update nav links
-      const navContainer = document.getElementById('navItems');
-      if (!navContainer) return;
-      navContainer.innerHTML = '';
+
+      const navContainer1 = document.getElementById('navItem1');
+      const navContainer2 = document.getElementById('navItem2');
+      
+      if (navContainer1) navContainer1.innerHTML = '';
+      if (navContainer2) navContainer2.innerHTML = '';
 
       // Recursive function to create nav items
       function createNavItem(item) {
@@ -111,7 +143,8 @@ function loadNav(lang = null) {
                 let subSubLink = document.createElement('a');
                 subSubLink.classList.add('dropdown-item');
                 subSubLink.href = '#';
-                subSubLink.setAttribute('onclick', `loadContent('${subSub.link}')`);
+              // Function to dynamically set the onclick event for a sub-sub nav item
+                subSubLink.setAttribute('onclick', `closeMobileNav(); loadContent('${subSub.link}')`);
                 subSubLink.textContent = subSub.text;
                 subSubItem.appendChild(subSubLink);
                 subDropdownMenu.appendChild(subSubItem);
@@ -123,7 +156,7 @@ function loadNav(lang = null) {
               let subLink = document.createElement('a');
               subLink.classList.add('dropdown-item');
               subLink.href = '#';
-              subLink.setAttribute('onclick', `loadContent('${sub.link}')`);
+              subLink.setAttribute('onclick', `closeMobileNav(); loadContent('${sub.link}')`);
               subLink.textContent = sub.text;
               subNavItem.appendChild(subLink);
             }
@@ -151,7 +184,7 @@ function loadNav(lang = null) {
           let normalLink = document.createElement('a');
           normalLink.classList.add('nav-link');
           normalLink.href = '#';
-          normalLink.setAttribute('onclick', `loadContent('${item.link}')`);
+          normalLink.setAttribute('onclick', `closeMobileNav(); loadContent('${item.link}')`);
           normalLink.textContent = item.text;
           navItem.appendChild(normalLink);
         }
@@ -160,10 +193,15 @@ function loadNav(lang = null) {
       }
 
       // Build main nav
-      data.nav.forEach(item => {
-        const navItem = createNavItem(item);
-        navContainer.appendChild(navItem);
-      });
+      if (navContainer1 && navContainer2) {
+        data.nav.forEach(item => {
+          const navItem1 = createNavItem(item);
+          const navItem2 = createNavItem(item);
+          
+          navContainer1.appendChild(navItem1);
+          navContainer2.appendChild(navItem2);
+        });
+      }
 
     })
     .catch(err => {

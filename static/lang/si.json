@@ -39,7 +39,7 @@
     },
     {
       "text": "අන්තර්ජාල සේවා",
-      "link": "/services"
+      "link": "services.md"
     },
     {
       "text": "පැමිණිලි",
@@ -47,7 +47,7 @@
     },
     {
       "text": "බාගතකිරීම්",
-      "link": "online_services.md"
+      "link": "downloads.md"
     },
     {
       "text": "ගැලරිය",

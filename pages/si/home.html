@@ -121,14 +121,22 @@
 
 <!-- Vision -->
 <div class="container vision">
+  <img class="vision-img" src="/static/images/cropped-logo-1-2.jpg" alt="council logo">
   <div class="row content-section">
-    
     <!-- Left Column - Title, Subtitle & Text -->
     <div class="col-lg-6 col-md-12">
       <h2 class="content-title"> අපගේ දැක්ම </h2>
       <h5 class="content-subtitle text-muted">වත්තාල නගර සභාව</h5>
       <p class="content-text">"නතා අවශ්‍යතා ඉටුකරන ප්‍රමිතිගත ආදර්ශමත්
-        පළාත් පාලන ආයතනයක්’’"</p>
+        පළාත් පාලන ආයතනයක්’"</p>
+        <a href="/">
+          <div class="alert alert-danger" role="alert">
+            <strong>දැනුම්දීම: </strong> පුරවැසිකරන මාර්ගෝපදේශය
+          </div>
+        </a>
+    </div>
+    <!-- Right Column - Image -->
+    <div class="col-lg-6 col-md-12 image-section">
       <h2 class="content-title"> අපගේ මෙහෙවර</h2>
       <p>
         “රාජ්‍ය ප්‍රතිපත්ති වලට අනුකූලව නගරයේ
@@ -137,101 +145,81 @@
         ජනතාවගේ සුඛ විහරණය, පහසුකම් සහ සුබසාධනය මෙන්ම
         නගරයේ සැප විහරණ ක්‍රමආරක්ෂා කිරීම, වැඩිදියුණු කිරීම”
       </p>
-
-    </div>
-
-    <!-- Right Column - Image -->
-    <div class="col-lg-6 col-md-12 image-section">
-      <a href="/">
-        <div class="alert alert-danger" role="alert">
-          <strong>දැනුම්දීම: </strong> පුරවැසිකරන මාර්ගෝපදේශය
-        </div>
-      </a>
-      <img src="/static/images/cropped-logo-1-2.jpg" alt="ව්‍යාපාරික පින්තුරය">
     </div>
 
   </div>
 </div>
 
-<!-- services -->
+<!-- Services Section -->
 <div class="container services">
   <h1 class="text-center my-4">අපගේ සේවා</h1>
-  
-  <div class="row initial-services">
-      <div class="col-md-4">
+  <div class="row service-container">
+      <div class="col-md-4 service-item">
           <div class="service-box">
-              <img src="/static/images/roadnew.png" alt="පාර" class="service-img">
-              <div class="service-overlay">
-                  <h4>පාර</h4>
-                  <p>සුවිශේෂී සැලසුම් සහිත මාර්ග සංවර්ධන කටයුතු.</p>
-              </div>
+            <img src="/static/images/roadnew.png" alt="road" class="service-icon">
+              <h4>මාර්ග</h4>
+              <a href="#" class="read-more" onclick="loadContent('vision_mission.md')">වැඩිදුර කියවන්න</a>
           </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 service-item">
           <div class="service-box">
-              <img src="/static/images/buildingnew.png" alt="කාලීන ක්ෂේම කාමර" class="service-img">
-              <div class="service-overlay">
-                  <h4>කාලීන ක්ෂේම කාමර</h4>
-                  <p>අති නවීන සහ ආරක්ෂිත රැඳවුම් පහසුකම්.</p>
-              </div>
-          </div>
+            <i class="bi bi-circle fs-2"></i>
+              <h4>ක්‍රීඩා පහසුකම්</h4>
+              <a href="#" class="read-more">වැඩිදුර කියවන්න</a>
+            </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 service-item">
           <div class="service-box">
-              <img src="/static/images/residential-homenw.png" alt="පෞද්ගලික ගෘහ" class="service-img">
-              <div class="service-overlay">
-                  <h4>පෞද්ගලික ගෘහ</h4>
-                  <p>සුන්දර සහ ආදරණීය පවුල් නිවාස.</p>
-              </div>
-          </div>
+            <img src="/static/images/buildingnew.png" alt="road" class="service-icon">
+              <h4>ළදරු පාසල</h4>
+              <a href="#" class="read-more">වැඩිදුර කියවන්න</a>
+            </div>
       </div>
+      <div class="col-md-4 service-item">
+          <div class="service-box">
+            <i class="bi bi-lightbulb fs-2"></i>
+              <h4>වීථි ආලෝකය</h4>
+              <a href="#" class="read-more">වැඩිදුර කියවන්න</a>
+            </div>
+      </div>
+      <div class="col-md-4 service-item">
+          <div class="service-box">
+              <i class="bi bi-shop-window fs-2"></i>
+              <h4>පොදු වෙළඳ පොළ
+              </h4>
+              <a href="#" class="read-more">වැඩිදුර කියවන්න</a>
+            </div>
+      </div>
+      <div class="col-md-4 service-item">
+          <div class="service-box">
+            <i class="bi bi-book fs-2"></i>
+              <h4>මහජන පුස්තකාලය</h4>
+              <a href="#" class="read-more">වැඩිදුර කියවන්න</a>
+            </div>
+      </div>
+      <div class="col-md-4 service-item">
+        <div class="service-box">
+            <i class="bi bi-recycle fs-2"></i>
+            <h4>ප්‍රතිචක්‍රීකරණය</h4>
+            <a href="#" class="read-more">වැඩිදුර කියවන්න</a>
+          </div>
+    </div>
+    <div class="col-md-4 service-item">
+      <div class="service-box">
+          <i class="bi bi-hospital fs-2"></i>
+          <h4>සෞඛ්‍ය</h4>
+          <a href="#" class="read-more">වැඩිදුර කියවන්න</a>
+        </div>
   </div>
-
-  <div class="row additional-services">
-      <div class="col-md-4">
-          <div class="service-box">
-              <img src="/static/images/machinerynew.png" alt="යන්ත්‍රණය" class="service-img">
-              <div class="service-overlay">
-                  <h4>යන්ත්‍රණය</h4>
-                  <p>නවීන තාක්ෂණයෙන් යුක්ත යන්ත්‍ර සැපයීම.</p>
-              </div>
-          </div>
+  <div class="col-md-4 service-item">
+    <div class="service-box">
+        <i class="bi bi-buildings fs-2"></i>
+        <h4>නගර ශාලාව</h4>
+        <a href="#" class="read-more">වැඩිදුර කියවන්න</a>
       </div>
-      <div class="col-md-4">
-          <div class="service-box">
-              <img src="/api/placeholder/400/250" alt="පොදු වෙළඳසැල්" class="service-img">
-              <div class="service-overlay">
-                  <h4>පොදු වෙළඳසැල්</h4>
-                  <p>වාණිජ හා සමාජ අවශ්‍යතා සඳහා නවීන වෙළඳසැල්.</p>
-              </div>
-          </div>
-      </div>
-      <div class="col-md-4">
-          <div class="service-box">
-              <img src="/api/placeholder/400/250" alt="මැණික්" class="service-img">
-              <div class="service-overlay">
-                  <h4>මැණික්</h4>
-                  <p>විශිෂ්ට ගෘහ නිර්මාණ සහ අලංකරණ.</p>
-              </div>
-          </div>
-      </div>
-  </div>
-
-  <div class="load-more">
-      <button id="loadMoreBtn" class="btn btn-primary">තවත් සේවා පෙන්වන්න</button>
+</div>
   </div>
 </div>
-
-<script>
-  document.getElementById('loadMoreBtn').addEventListener('click', function() {
-      const additionalServices = document.querySelector('.additional-services');
-      const btnText = this.textContent;
-
-      additionalServices.classList.toggle('show');
-      this.textContent = btnText === 'තවත් සේවා පෙන්වන්න' ? 'සේවා සඟවන්න' : 'තවත් සේවා පෙන්වන්න';
-  });
-</script>
-
 <!-- Chairman -->
 <div class="container w-100 chairman-section text-center py-5">
   <div class="row justify-content-center">
@@ -242,7 +230,7 @@
         "අපගේ දර්ශනය වන්නේ ජීවිතය හා වාණිජයන් ඉතා පහසුවෙන් සම්පූර්ණ කරන තාක්ෂණය හදා ගැනීමයි. අපි නව්‍යත්වය, විශේෂඥතාව සහ සාරවත් බලපෑමක් ලබා ගැනීමට විශ්වාස කරනවා."
       </p>
       <h5 class="mt-4">W.M.A.F. ගුණසේකර</h5>
-      <p class="text-muted">අधිකාරි</p>
+      <p class="text-sn">සභාපති</p>
     </div>
   </div>
 </div>
