@@ -240,7 +240,7 @@
 
   .slider-container {
     width: 100%;
-    max-width: 800px;
+    max-width: 100%;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -269,11 +269,6 @@
     flex-shrink: 0;
     color: #ffffff !important;
   
-  }
-  
-  .slider-item:last-child {
-    border-right: none;
-    background-color: #000000;
   }
   
   .slider-item .icon {
@@ -305,8 +300,8 @@
   }
   
   .Section .container {
-    margin-bottom: 2em;
-    margin-top: 2em;
+    margin-bottom: 1.2em;
+    margin-top: 1.2em;
     padding: 1.2em;
   }
   
@@ -411,6 +406,7 @@
     background: linear-gradient(90deg, #023265, #0f024de4, #01264d);
     background-size: 300% 300%;
     animation: gradientAnimation 6s ease infinite;
+    padding:  0em 2em;
   }
   
   .news .card-title{
@@ -553,7 +549,10 @@
     font-style: italic;
   }
   .info {
-    margin-top: 6em !important;
+    margin-top: 4em !important;
+  }
+  .info  h1{
+    margin-top: 0em !important;
   }
   .info-img {
     height: 88%;

@@ -2,14 +2,21 @@
 window.addEventListener('DOMContentLoaded', () => {
   loadStaticPart('sections/header.html', 'header', () => {
     loadNav(); // Load nav after header
+    updateActiveLanguage();
   });
 
   loadStaticPart('sections/footer.html', 'footer');
 
-  const lang = localStorage.getItem('language') || 'si';
-  loadContent('home.html', lang);
+  // Get language and page from URL if available
+  const urlParams = new URLSearchParams(window.location.search);
+  const pageParam = urlParams.get('page');
+  const langParam = urlParams.get('lang');
+  
+  const lang = langParam || localStorage.getItem('language') || 'si';
+  const page = pageParam || 'home.html';
+  
+  loadContent(page, lang);
 });
-
 
 // Load static HTML parts
 function loadStaticPart(filePath, targetId, callback = null) {
@@ -21,17 +28,25 @@ function loadStaticPart(filePath, targetId, callback = null) {
     });
 }
 
-// Load .md or .html content
+// Load .md or .html content or navigate to URLs
 function loadContent(pageName, lang = null) {
   if (!lang) lang = localStorage.getItem('language') || 'si';
 
   // Default to 'home' if no page name is provided
   if (!pageName) pageName = 'home.html';
 
+  // Check if the pageName is a URL (starts with http:// or https://)
+  if (pageName.startsWith('http://') || pageName.startsWith('https://')) {
+    // External URL - redirect the browser
+    window.open(pageName, '_blank');
+    return;
+  }
+
+  // Internal page handling
   // Determine extension based on convention (e.g., all .md pages)
-  let fileName = `${pageName}`; // default markdown
+  let fileName = `${pageName}`; // default as is
   if (pageName === 'contact' || pageName === 'about') {
-    fileName = `${pageName}.md`; // example of HTML file exceptions
+    fileName = `${pageName}.md`; // example of markdown file exceptions
   }
 
   const filePath = `pages/${lang}/${fileName}`;
@@ -44,12 +59,15 @@ function loadContent(pageName, lang = null) {
     .then(({ ext, data }) => {
       const contentDiv = document.getElementById('content');
       contentDiv.innerHTML = ext === 'md' ? marked.parse(data) : data;
+      
+      // Update browser URL without page reload using History API
+      const urlPath = `?page=${pageName}&lang=${lang}`;
+      window.history.pushState({ page: pageName, lang }, '', urlPath);
     })
     .catch(error => {
       document.getElementById('content').innerHTML = `<p>Error: ${error.message}</p>`;
     });
 }
-
 
 // Load nav dynamically
 // Function to close the mobile navigation slider
@@ -67,8 +85,9 @@ function attachCloseNav() {
     navItems[i].onclick = closeMobileNav; // Set the onclick event to close the nav
   }
 }
+
 // Close the nav when clicking outside the mobile menu
-document.addEventListener('click', function (event) {
+document.addEventListener('click', function(event) {
   let menu = document.getElementById('menuItems');
   let toggleButton = document.querySelector('.mobile-menu');
   let mobileNav = document.querySelector('.mobile-nav-container');
@@ -78,8 +97,6 @@ document.addEventListener('click', function (event) {
     closeMobileNav();
   }
 });
-
-// Call this function when the page loads or when the nav items are dynamically created
 
 function loadNav(lang = null) {
   if (!lang) lang = localStorage.getItem('language') || 'si';
@@ -94,103 +111,11 @@ function loadNav(lang = null) {
       if (icon) icon.textContent = data.name;
 
       // Update nav links
-
       const navContainer1 = document.getElementById('navItem1');
       const navContainer2 = document.getElementById('navItem2');
       
       if (navContainer1) navContainer1.innerHTML = '';
       if (navContainer2) navContainer2.innerHTML = '';
-
-      // Recursive function to create nav items
-      function createNavItem(item) {
-        let navItem = document.createElement('li');
-        navItem.classList.add('nav-item');
-
-        // Check for submenus
-        if (item.sub_menu) {
-          navItem.classList.add('dropdown');
-
-          let dropdownToggle = document.createElement('a');
-          dropdownToggle.classList.add('nav-link', 'dropdown-toggle');
-          dropdownToggle.href = '#';
-          dropdownToggle.setAttribute('role', 'button');
-          dropdownToggle.setAttribute('data-bs-toggle', 'dropdown');
-          dropdownToggle.textContent = item.text;
-          navItem.appendChild(dropdownToggle);
-
-          let dropdownMenu = document.createElement('ul');
-          dropdownMenu.classList.add('dropdown-menu');
-
-          // Recursively create sub-items
-          item.sub_menu.forEach(sub => {
-            let subNavItem = document.createElement('li');
-
-            // Check for deeper submenus
-            if (sub.sub_menu) {
-              subNavItem.classList.add('dropdown-submenu'); // You can style this
-              
-              let subDropdownToggle = document.createElement('a');
-              subDropdownToggle.classList.add('dropdown-item', 'dropdown-toggle');
-              subDropdownToggle.href = '#';
-              subDropdownToggle.textContent = sub.text;
-              subNavItem.appendChild(subDropdownToggle);
-
-              let subDropdownMenu = document.createElement('ul');
-              subDropdownMenu.classList.add('dropdown-menu');
-
-              sub.sub_menu.forEach(subSub => {
-                let subSubItem = document.createElement('li');
-                let subSubLink = document.createElement('a');
-                subSubLink.classList.add('dropdown-item');
-                subSubLink.href = '#';
-              // Function to dynamically set the onclick event for a sub-sub nav item
-                subSubLink.setAttribute('onclick', `closeMobileNav(); loadContent('${subSub.link}')`);
-                subSubLink.textContent = subSub.text;
-                subSubItem.appendChild(subSubLink);
-                subDropdownMenu.appendChild(subSubItem);
-              });
-
-              subNavItem.appendChild(subDropdownMenu);
-            } else {
-              // Simple dropdown item
-              let subLink = document.createElement('a');
-              subLink.classList.add('dropdown-item');
-              subLink.href = '#';
-              subLink.setAttribute('onclick', `closeMobileNav(); loadContent('${sub.link}')`);
-              subLink.textContent = sub.text;
-              subNavItem.appendChild(subLink);
-            }
-
-            dropdownMenu.appendChild(subNavItem);
-          });
-          
-          // Load header, footer, and slider on page load
-          window.addEventListener('DOMContentLoaded', () => {
-            loadStaticPart('sections/header.html', 'header', () => {
-              loadNav(); // Load nav after header
-              updateActiveLanguage();
-            });
-
-            loadStaticPart('sections/footer.html', 'footer');
-          
-            const lang = localStorage.getItem('language') || 'si';
-            loadContent('home.html', lang);
-          });
-
-          navItem.appendChild(dropdownMenu);
-        } 
-        // Normal link
-        else {
-          let normalLink = document.createElement('a');
-          normalLink.classList.add('nav-link');
-          normalLink.href = '#';
-          normalLink.setAttribute('onclick', `closeMobileNav(); loadContent('${item.link}')`);
-          normalLink.textContent = item.text;
-          navItem.appendChild(normalLink);
-        }
-
-        return navItem;
-      }
 
       // Build main nav
       if (navContainer1 && navContainer2) {
@@ -202,11 +127,114 @@ function loadNav(lang = null) {
           navContainer2.appendChild(navItem2);
         });
       }
-
     })
     .catch(err => {
       console.error('Failed to load nav:', err);
     });
+}
+
+// Recursive function to create nav items
+function createNavItem(item) {
+  let navItem = document.createElement('li');
+  navItem.classList.add('nav-item');
+
+  // Check for submenus
+  if (item.sub_menu) {
+    navItem.classList.add('dropdown');
+
+    let dropdownToggle = document.createElement('a');
+    dropdownToggle.classList.add('nav-link', 'dropdown-toggle');
+    dropdownToggle.href = '#';
+    dropdownToggle.setAttribute('role', 'button');
+    dropdownToggle.setAttribute('data-bs-toggle', 'dropdown');
+    dropdownToggle.textContent = item.text;
+    navItem.appendChild(dropdownToggle);
+
+    let dropdownMenu = document.createElement('ul');
+    dropdownMenu.classList.add('dropdown-menu');
+
+    // Recursively create sub-items
+    item.sub_menu.forEach(sub => {
+      let subNavItem = document.createElement('li');
+
+      // Check for deeper submenus
+      if (sub.sub_menu) {
+        subNavItem.classList.add('dropdown-submenu'); // You can style this
+        
+        let subDropdownToggle = document.createElement('a');
+        subDropdownToggle.classList.add('dropdown-item', 'dropdown-toggle');
+        subDropdownToggle.href = '#';
+        subDropdownToggle.textContent = sub.text;
+        subNavItem.appendChild(subDropdownToggle);
+
+        let subDropdownMenu = document.createElement('ul');
+        subDropdownMenu.classList.add('dropdown-menu');
+
+        sub.sub_menu.forEach(subSub => {
+          let subSubItem = document.createElement('li');
+          let subSubLink = document.createElement('a');
+          subSubLink.classList.add('dropdown-item');
+          
+          // Check if it's an external URL
+          if (subSub.link && (subSub.link.startsWith('http://') || subSub.link.startsWith('https://'))) {
+            subSubLink.href = subSub.link;
+            subSubLink.setAttribute('target', '_blank');
+            subSubLink.setAttribute('onclick', 'closeMobileNav()');
+          } else {
+            subSubLink.href = '#';
+            subSubLink.setAttribute('onclick', `closeMobileNav(); loadContent('${subSub.link}')`);
+          }
+          
+          subSubLink.textContent = subSub.text;
+          subSubItem.appendChild(subSubLink);
+          subDropdownMenu.appendChild(subSubItem);
+        });
+
+        subNavItem.appendChild(subDropdownMenu);
+      } else {
+        // Simple dropdown item
+        let subLink = document.createElement('a');
+        subLink.classList.add('dropdown-item');
+        
+        // Check if it's an external URL
+        if (sub.link && (sub.link.startsWith('http://') || sub.link.startsWith('https://'))) {
+          subLink.href = sub.link;
+          subLink.setAttribute('target', '_blank');
+          subLink.setAttribute('onclick', 'closeMobileNav()');
+        } else {
+          subLink.href = '#';
+          subLink.setAttribute('onclick', `closeMobileNav(); loadContent('${sub.link}')`);
+        }
+        
+        subLink.textContent = sub.text;
+        subNavItem.appendChild(subLink);
+      }
+
+      dropdownMenu.appendChild(subNavItem);
+    });
+
+    navItem.appendChild(dropdownMenu);
+  } 
+  // Normal link
+  else {
+    let normalLink = document.createElement('a');
+    normalLink.classList.add('nav-link');
+    
+    // Check if it's an external URL
+    if (item.link && (item.link.startsWith('http://') || item.link.startsWith('https://'))) {
+      normalLink.href = item.link;
+      normalLink.setAttribute('target', '_blank');
+      normalLink.setAttribute('onclick', 'closeMobileNav()');
+    } else {
+      normalLink.href = '#';
+      normalLink.setAttribute('onclick', `closeMobileNav(); loadContent('${item.link}')`);
+    }
+    
+    normalLink.textContent = item.text;
+    navItem.appendChild(normalLink);
+  }
+
+  return navItem;
 }
 
 // Change language
@@ -227,3 +255,18 @@ function setLanguage(lang) {
   loadContent('home.html', lang);
 }
 
+// Update active language indication
+function updateActiveLanguage() {
+  const lang = localStorage.getItem('language') || 'si';
+  const links = document.querySelectorAll('.active-lang');
+  
+  links.forEach(link => link.classList.remove('active'));
+  
+  if (lang === 'en') {
+    links[0]?.classList.add('active');
+  } else if (lang === 'si') {
+    links[1]?.classList.add('active');
+  } else if (lang === 'ta') {
+    links[2]?.classList.add('active');
+  }
+}
