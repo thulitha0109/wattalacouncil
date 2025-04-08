@@ -4,10 +4,12 @@
     <div class="d-flex justify-content-between align-items-center w-100 py-2 top-row">
       <!-- Logo -->
       <a class="navbar-brand d-flex align-items-center" href="#" onclick="loadContent('home.html')">
-        <img src="/static/images/cropped-logo-1-2.jpg" alt="Logo" width="80" height="80" class="me-2">
+        <img src="/static/images/wattala-uc.png" alt="Logo" width="80" height="80" class="me-2">
             <!-- Council Name -->
-            <h1 id="councilName" class="animated-text-header d-none d-lg-inline-block me-3"></h1>
+            <h1 id="councilName" class="animated-text-nav d-none d-lg-inline-block"></h1>
       </a>
+
+
         
       <div class="d-flex  align-items-center">
         <div class="contact-info d-none d-sm-flex align-items-center gap-3">
@@ -19,6 +21,13 @@
             <i class="bi bi-envelope pt-1"></i>
               <a href="mailto:ucwattala@sltnet.lk">ucwattala@sltnet.lk</a>
           </div>
+          <div class="contact-item d-flex align-items-center">
+            <a href="" class="secn-btn" id="Payments" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-credit-card"></i>
+              <span id="PaymentName"></span>
+            </a>
+          </div>
+
       </div>
         <!-- Language Selector -->
         <div class="d-none d-lg-block dropdown language-selector">
@@ -71,6 +80,13 @@
         </div>
       </div>
 
+      <div class="contact-item d-flex align-items-center">
+        <a href="" class="secn-btn" id="Payments" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="bi bi-credit-card"></i>
+          <span id="PaymentName"></span>
+        </a>
+      </div>
+
       <ul class="mobile-nav navbar-nav" id="navItem2">
         <!-- Mobile nav items will be cloned here -->
       </ul>
@@ -88,6 +104,8 @@
           </div>
           
         </div>
+
+
 
         <div class="container contact-info flex mt-4 align-items-center">
           <div class="contact-item d-flex align-items-center">
@@ -123,9 +141,10 @@
 }
 
 /* Council name */
-.animated-text-header {
-  font-size: 1.5rem;
-  color: #333;
+.animated-text-nav {
+  font-size: 1.8em;
+  font-weight: 900;
+  color: #ffffff;
   margin: 0;
   font-weight: 600;
 }

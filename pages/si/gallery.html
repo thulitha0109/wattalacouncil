@@ -1,0 +1,420 @@
+   <style>
+        .nav-tabs .nav-link {
+            color: #333;
+            font-weight: 500;
+        }
+        .nav-tabs .nav-link.active {
+            color: #0d6efd;
+            font-weight: 600;
+        }
+        .gallery-item {
+            margin-bottom: 30px;
+            transition: all 0.3s;
+        }
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        .year-filter {
+            margin-bottom: 20px;
+        }
+        .year-filter .btn {
+            margin-right: 10px;
+        }
+        .year-content {
+            display: none;
+        }
+        .year-content.active {
+            display: block;
+        }
+    </style>
+
+<div class="container py-5">
+    <h1 class="animated-text text-center mb-5">ගැලරිය</h1>
+    
+    <!-- Tab navigation -->
+    <ul class="nav nav-tabs mb-4" id="departmentTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="health-tab" data-bs-toggle="tab" data-bs-target="#health" type="button" role="tab" aria-controls="health" aria-selected="true">සෞඛ්‍ය අංශය</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="development-tab" data-bs-toggle="tab" data-bs-target="#development" type="button" role="tab" aria-controls="development" aria-selected="false">සංවර්ධන අංශය</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="revenue-tab" data-bs-toggle="tab" data-bs-target="#revenue" type="button" role="tab" aria-controls="revenue" aria-selected="false">ආදායම් අංශය</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="community-tab" data-bs-toggle="tab" data-bs-target="#community" type="button" role="tab" aria-controls="community" aria-selected="false">ප්‍රජා අංශය</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="accounts-tab" data-bs-toggle="tab" data-bs-target="#accounts" type="button" role="tab" aria-controls="accounts" aria-selected="false">ගිණුම් අංශය</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="administration-tab" data-bs-toggle="tab" data-bs-target="#administration" type="button" role="tab" aria-controls="administration" aria-selected="false">ආයතන අංශය</button>
+        </li>
+    </ul>
+    
+    <!-- Tab content -->
+    <div class="tab-content" id="departmentTabsContent">
+        <!-- Health Section -->
+        <div class="tab-pane fade show active" id="health" role="tabpanel" aria-labelledby="health-tab">
+            <h2 class="mb-4">සෞඛ්‍ය අංශය</h2>
+            
+            <!-- Year Filter -->
+            <div class="year-filter">
+                <button class="btn btn-primary" onclick="switchYear('health', '2024', this)">2024</button>
+                <button class="btn btn-outline-primary" onclick="switchYear('health', '2025', this)">2025</button>
+            </div>
+            
+            <!-- Year Content -->
+            <div id="health-2024" class="year-content active">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card gallery-item">
+                            <img src="/api/placeholder/400/320" class="card-img-top" alt="Health Department 2024">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card gallery-item">
+                            <img src="/api/placeholder/400/320" class="card-img-top" alt="Health Department 2024">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card gallery-item">
+                            <img src="/api/placeholder/400/320" class="card-img-top" alt="Health Department 2024">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="health-2025" class="year-content">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card gallery-item">
+                            <img src="/api/placeholder/400/320" class="card-img-top" alt="Health Department 2025">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card gallery-item">
+                            <img src="/api/placeholder/400/320" class="card-img-top" alt="Health Department 2025">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Development Section -->
+        <div class="tab-pane fade" id="development" role="tabpanel" aria-labelledby="development-tab">
+            <h2 class="mb-4">සංවර්ධන අංශය</h2>
+            
+            <!-- Year Filter -->
+            <div class="year-filter">
+                <button class="btn btn-primary" onclick="switchYear('development', '2024', this)">2024</button>
+                <button class="btn btn-outline-primary" onclick="switchYear('development', '2025', this)">2025</button>
+            </div>
+            
+            <!-- Year Content -->
+            <div id="development-2024" class="year-content active">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card gallery-item">
+                            <img src="/api/placeholder/400/320" class="card-img-top" alt="Development Department 2024">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card gallery-item">
+                            <img src="/api/placeholder/400/320" class="card-img-top" alt="Development Department 2024">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="development-2025" class="year-content">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card gallery-item">
+                            <img src="/api/placeholder/400/320" class="card-img-top" alt="Development Department 2025">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card gallery-item">
+                            <img src="/api/placeholder/400/320" class="card-img-top" alt="Development Department 2025">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Revenue Section -->
+        <div class="tab-pane fade" id="revenue" role="tabpanel" aria-labelledby="revenue-tab">
+            <h2 class="mb-4">ආදායම් අංශය</h2>
+            
+            <!-- Year Filter -->
+            <div class="year-filter">
+                <button class="btn btn-primary" onclick="switchYear('revenue', '2024', this)">2024</button>
+                <button class="btn btn-outline-primary" onclick="switchYear('revenue', '2025', this)">2025</button>
+            </div>
+            
+            <!-- Year Content -->
+            <div id="revenue-2024" class="year-content active">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card gallery-item">
+                            <img src="/api/placeholder/400/320" class="card-img-top" alt="Revenue Department 2024">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card gallery-item">
+                            <img src="/api/placeholder/400/320" class="card-img-top" alt="Revenue Department 2024">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="revenue-2025" class="year-content">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card gallery-item">
+                            <img src="/api/placeholder/400/320" class="card-img-top" alt="Revenue Department 2025">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card gallery-item">
+                            <img src="/api/placeholder/400/320" class="card-img-top" alt="Revenue Department 2025">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Community Section -->
+        <div class="tab-pane fade" id="community" role="tabpanel" aria-labelledby="community-tab">
+            <h2 class="mb-4">ප්‍රජා අංශය</h2>
+            
+            <!-- Community sub-tabs -->
+            <ul class="nav nav-pills mb-4" id="communitySubTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="library-tab" data-bs-toggle="pill" data-bs-target="#library" type="button" role="tab" aria-controls="library" aria-selected="true">මහජන පුස්තකාලය</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="clinic-tab" data-bs-toggle="pill" data-bs-target="#clinic" type="button" role="tab" aria-controls="clinic" aria-selected="false">සායනය</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="ayurveda-tab" data-bs-toggle="pill" data-bs-target="#ayurveda" type="button" role="tab" aria-controls="ayurveda" aria-selected="false">ආයුර්වේදය</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="preschool-tab" data-bs-toggle="pill" data-bs-target="#preschool" type="button" role="tab" aria-controls="preschool" aria-selected="false">පෙර පාසැල</button>
+                </li>
+            </ul>
+            
+            <!-- Community sub-tab content -->
+            <div class="tab-content" id="communitySubTabsContent">
+                <!-- Library -->
+                <div class="tab-pane fade show active" id="library" role="tabpanel" aria-labelledby="library-tab">
+                    <h3 class="mb-3">මහජන පුස්තකාලය</h3>
+                    
+                    <!-- Year Filter -->
+                    <div class="year-filter">
+                        <button class="btn btn-primary" onclick="switchYear('library', '2024', this)">2024</button>
+                        <button class="btn btn-outline-primary" onclick="switchYear('library', '2025', this)">2025</button>
+                    </div>
+                    
+                    <!-- Year Content -->
+                    <div id="library-2024" class="year-content active">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card gallery-item">
+                                    <img src="/api/placeholder/400/320" class="card-img-top" alt="Library 2024">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card gallery-item">
+                                    <img src="/api/placeholder/400/320" class="card-img-top" alt="Library 2024">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="library-2025" class="year-content">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card gallery-item">
+                                    <img src="/api/placeholder/400/320" class="card-img-top" alt="Library 2025">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card gallery-item">
+                                    <img src="/api/placeholder/400/320" class="card-img-top" alt="Library 2025">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Clinic -->
+                <div class="tab-pane fade" id="clinic" role="tabpanel" aria-labelledby="clinic-tab">
+                    <h3 class="mb-3">සායනය</h3>
+                    
+                    <!-- Year Filter -->
+                    <div class="year-filter">
+                        <button class="btn btn-primary" onclick="switchYear('clinic', '2024', this)">2024</button>
+                        <button class="btn btn-outline-primary" onclick="switchYear('clinic', '2025', this)">2025</button>
+                    </div>
+                    
+                    <!-- Year Content -->
+                    <div id="clinic-2024" class="year-content active">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card gallery-item">
+                                    <img src="/api/placeholder/400/320" class="card-img-top" alt="Clinic 2024">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card gallery-item">
+                                    <img src="/api/placeholder/400/320" class="card-img-top" alt="Clinic 2024">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="clinic-2025" class="year-content">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card gallery-item">
+                                    <img src="/api/placeholder/400/320" class="card-img-top" alt="Clinic 2025">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card gallery-item">
+                                    <img src="/api/placeholder/400/320" class="card-img-top" alt="Clinic 2025">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ayurveda -->
+                <div class="tab-pane fade" id="ayurveda" role="tabpanel" aria-labelledby="ayurveda-tab">
+                    <h3 class="mb-3">ආයුර්වේදය</h3>
+                    
+                    <!-- Year Filter -->
+                    <div class="year-filter">
+                        <button class="btn btn-primary" onclick="switchYear('ayurveda', '2024', this)">2024</button>
+                        <button class="btn btn-outline-primary" onclick="switchYear('ayurveda', '2025', this)">2025</button>
+                    </div>
+                    
+                    <!-- Year Content -->
+                    <div id="ayurveda-2024" class="year-content active">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card gallery-item">
+                                    <img src="/api/placeholder/400/320" class="card-img-top" alt="Ayurveda 2024">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card gallery-item">
+                                    <img src="/api/placeholder/400/320" class="card-img-top" alt="Ayurveda 2024">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="ayurveda-2025" class="year-content">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card gallery-item">
+                                    <img src="/api/placeholder/400/320" class="card-img-top" alt="Ayurveda 2025">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card gallery-item">
+                                    <img src="/api/placeholder/400/320" class="card-img-top" alt="Ayurveda 2025">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Preschool -->
+                <div class="tab-pane fade" id="preschool" role="tabpanel" aria-labelledby="preschool-tab">
+                    <h3 class="mb-3">පෙර පාසැල</h3>
+                    
+                    <!-- Year Filter -->
+                    <div class="year-filter">
+                        <button class="btn btn-primary" onclick="switchYear('preschool', '2024', this)">2024</button>
+                        <button class="btn btn-outline-primary" onclick="switchYear('preschool', '2025', this)">2025</button>
+                    </div>
+                    
+                    <!-- Year Content -->
+                    <div id="preschool-2024" class="year-content active">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card gallery-item">
+                                    <img src="/api/placeholder/400/320" class="card-img-top" alt="Preschool 2024">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card gallery-item">
+                                    <img src="/api/placeholder/400/320" class="card-img-top" alt="Preschool 2024">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="preschool-2025" class="year-content">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card gallery-item">
+                                    <img src="/api/placeholder/400/320" class="card-img-top" alt="Preschool 2025">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card gallery-item">
+                                    <img src="/api/placeholder/400/320" class="card-img-top" alt="Preschool 2025">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Accounts Section -->
+        <div class="tab-pane fade" id="accounts" role="tabpanel" aria-labelledby="accounts-tab">
+            <h2 class="mb-4">ගිණුම් අංශය</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card gallery-item">
+                        <img src="/api/placeholder/400/320" class="card-img-top" alt="Accounts Department">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card gallery-item">
+                        <img src="/api/placeholder/400/320" class="card-img-top" alt="Accounts Department">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Administration Section -->
+        <div class="tab-pane fade" id="administration" role="tabpanel" aria-labelledby="administration-tab">
+            <h2 class="mb-4">ආයතන අංශය</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card gallery-item">
+                        <img src="/api/placeholder/400/320" class="card-img-top" alt="Administration Department">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card gallery-item">
+                        <img src="/api/placeholder/400/320" class="card-img-top" alt="Administration Department">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

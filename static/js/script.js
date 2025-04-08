@@ -110,6 +110,10 @@ function loadNav(lang = null) {
       const icon = document.getElementById('icon');
       if (icon) icon.textContent = data.name;
 
+        // Update council name
+        const PaymentName = document.getElementById('PaymentName');
+        if (PaymentName) PaymentName.textContent = data.payment;
+
       // Update nav links
       const navContainer1 = document.getElementById('navItem1');
       const navContainer2 = document.getElementById('navItem2');
@@ -270,3 +274,34 @@ function updateActiveLanguage() {
     links[2]?.classList.add('active');
   }
 }
+function switchYear(section, year, btn) {
+  // Hide all year content for this section
+  document.querySelectorAll(`#${section}-2024, #${section}-2025`).forEach(content => {
+      content.classList.remove('active');
+  });
+  
+  // Show selected year content
+  document.getElementById(`${section}-${year}`).classList.add('active');
+  
+  // Update button styles
+  const parentDiv = btn.parentNode;
+  const buttons = parentDiv.querySelectorAll('button');
+  
+  buttons.forEach(button => {
+      button.classList.remove('btn-primary');
+      button.classList.add('btn-outline-primary');
+  });
+  
+  btn.classList.remove('btn-outline-primary');
+  btn.classList.add('btn-primary');
+}
+
+// Initialize Bootstrap tooltips
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof bootstrap !== 'undefined' && bootstrap.Tooltip) {
+      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+      tooltipTriggerList.map(function(tooltipTriggerEl) {
+          return new bootstrap.Tooltip(tooltipTriggerEl);
+      });
+  }
+});
