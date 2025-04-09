@@ -262,7 +262,8 @@
 <section class="info-section" >
   <div class="container gallery">
     <div class="row">
-        <div class="col-md-4 text-center text-md-start mb-4 mb-md-0">
+
+    <div class="col-md-4 text-center text-md-start mb-4 mb-md-0">
           <h2>වෙරළ තීරය පිරිසිදු කිරීම</h2>
           <h5> මහජන පුස්තකාලය</h5>
           <a href="#" class="btn secn-btn " onclick="loadContent('gallery.html')">වැඩිදුර කියවන්න
@@ -270,9 +271,10 @@
               <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
             </svg>
         </a>
-      </div>
-      <div class="col-md-8 text-center">
+    </div>
+    <div class="col-md-8 text-center">
         <div class="carousel-container">
+          <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <img src="/static/images/latest/1main.jpg" class="d-block" alt="Beach cleanup event">
@@ -320,10 +322,21 @@
                 <img src="/static/images/latest/DSC_0175.jpg" class="d-block" alt="Environmental project">
               </div>
             </div>
+            
+            <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
         </div>
     </div>
+
   </div>
+</div>
 </section>
 
 
