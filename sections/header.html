@@ -22,9 +22,9 @@
               <a href="mailto:ucwattala@sltnet.lk">ucwattala@sltnet.lk</a>
           </div>
           <div class="contact-item d-flex align-items-center">
-            <a href="" class="secn-btn" id="Payments" data-bs-toggle="dropdown" aria-expanded="false">
+            <a href="" class="secn-btn" >
               <i class="bi bi-credit-card"></i>
-              <span id="PaymentName"></span>
+              <span id="PaymentName">Payments</span>
             </a>
           </div>
 
@@ -123,9 +123,20 @@
 
 <style>
 /* Base navbar styles */
+
+@media (min-width: 576px) {
+  #header .container {
+    max-width:  1140px;
+  }
+}
+@media (min-width: 1400px) {
+  #header .container {
+    max-width:  1380px;
+  }
+}
+
 .navbar {
   background: white;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   padding: 0;
 }
 
