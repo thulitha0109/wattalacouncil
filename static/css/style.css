@@ -202,8 +202,8 @@
   
   #header {
     background: #1a2a6c;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #fdbb2d, #b21f1f, #1a2a6c);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #fdbb2d, #b21f1f, #1a2a6c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient(to left, #5e0404, #b21f1f, #1a2a6c); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #5e0404, #b21f1f, #1a2a6c);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     padding:  1.2em;
     padding-top: 0;
   }
@@ -432,13 +432,13 @@
   }
   
   .notice-alert .container {
-    margin-top: 0;
+    margin: 0;
   }
   
   .notice-alert {
     background: #1a2a6c;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient(to right, #5e0404, #b21f1f, #1a2a6c);/* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right,  #5e0404, #b21f1f, #1a2a6c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     padding:  0em 2em;
   }
   
@@ -501,6 +501,109 @@
   .news-card-3:hover p {
     color: black !important;
   }
+
+  .main-section {
+    position: relative;
+    background: url('/static/images/image1.webp') center/cover no-repeat;
+    padding: 60px 0;
+    color: white;
+    overflow: hidden;
+  }
+  
+  /* Glassmorphism overlay */
+  .main-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(97, 3, 3, 0.365); /* light transparent overlay */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 1;
+  }
+  
+  /* Content inside stays above the overlay */
+  .main-section > * {
+    position: relative;
+    z-index: 2;
+  }
+  
+
+.vision-mission-container {
+    background: linear-gradient(to left, #5e0404, #b21f1f, #1a2a6c);
+    border-radius: 10px;
+    padding: 30px;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.dragon-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    background-image: url('/static/images/flagbg.jpg');
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+.stats-container {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 40px 0;
+    margin-top: 40px;
+}
+
+.stats-item {
+    text-align: center;
+    padding: 20px;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stats-item:last-child {
+    border-right: none;
+}
+
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    border: 2px solid #ff6a00;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.icon-circle i {
+    font-size: 2rem;
+    color: #ff6a00;
+}
+
+.stats-number {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.stats-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.unit {
+    font-size: 1.2rem;
+    vertical-align: super;
+    margin-left: 5px;
+}
   
      .services {
       padding: 50px 0;
