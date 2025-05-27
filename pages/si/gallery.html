@@ -66,12 +66,80 @@
             
             <!-- Year Filter -->
             <div class="year-filter">
-                <button class="btn btn-primary" onclick="switchYear('health', '2024', this)">2024</button>
+                <button class="btn btn-primary" onclick="switchYear('health', '2023', this)">2023</button>
+                <button class="btn btn-outline-primary" onclick="switchYear('health', '2024', this)">2024</button>
                 <button class="btn btn-outline-primary" onclick="switchYear('health', '2025', this)">2025</button>
             </div>
             
             <!-- Year Content -->
-            <div id="health-2024" class="year-content active">
+            <div id="health-2023" class="year-content active">
+                <div class="row">
+                    <p>2023-10-25 - සායනය ( නවලෝක රෝහල)</p>
+                    <div class="col-md-4">
+                        <div class="card gallery-item">
+                            <img src="/static/images/gallery/health/1/DSC_0296.jpg" class="card-img-top" alt="Health Department 2024">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card gallery-item">
+                            <img src="/static/images/gallery/health/1/DSC_0298.jpg" class="card-img-top" alt="Health Department 2024">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card gallery-item">
+                            <img src="/static/images/gallery/health/1/DSC_0310.jpg" class="card-img-top" alt="Health Department 2024">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card gallery-item">
+                            <img src="/static/images/gallery/health/1/DSC_0320.jpg" class="card-img-top" alt="Health Department 2024">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card gallery-item">
+                            <img src="/static/images/gallery/health/1/DSC_0322.jpg" class="card-img-top" alt="Health Department 2024">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card gallery-item">
+                            <img src="/static/images/gallery/health/1/DSC_0347.jpg" class="card-img-top" alt="Health Department 2024">
+                        </div>
+                    </div>
+                    <p>2023-10-27 - රුහුණු හෝටලය මුද්‍රා තැබීම</p>
+                    <div class="col-md-4">
+                        <div class="card gallery-item">
+                            <img src="/static/images/gallery/health/2/DSC_0357.jpg" class="card-img-top" alt="Health Department 2024">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card gallery-item">
+                            <img src="/static/images/gallery/health/2/DSC_0360.jpg" class="card-img-top" alt="Health Department 2024">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card gallery-item">
+                            <img src="/static/images/gallery/health/2/DSC_0364.jpg" class="card-img-top" alt="Health Department 2024">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card gallery-item">
+                            <img src="/static/images/gallery/health/2/DSC_0388.jpg" class="card-img-top" alt="Health Department 2024">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card gallery-item">
+                            <img src="/static/images/gallery/health/2/DSC_0394.jpg" class="card-img-top" alt="Health Department 2024">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card gallery-item">
+                            <img src="/static/images/gallery/health/2/DSC_0404.jpg" class="card-img-top" alt="Health Department 2024">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="health-2024" class="year-content">
                 <div class="row">
                     <div class="col-md-4">
                         <div class="card gallery-item">
@@ -279,7 +347,10 @@
                     <button class="nav-link" id="ayurveda-tab" data-bs-toggle="pill" data-bs-target="#ayurveda" type="button" role="tab" aria-controls="ayurveda" aria-selected="false">ආයුර්වේදය</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="preschool-tab" data-bs-toggle="pill" data-bs-target="#preschool" type="button" role="tab" aria-controls="preschool" aria-selected="false">පෙර පාසැල</button>
+                    <button class="nav-link" id="preschool-tab" data-bs-toggle="pill" data-bs-target="#preschool" type="button" role="tab" aria-controls="preschool" aria-selected="false">පෙර පාසල</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="school-tab" data-bs-toggle="pill" data-bs-target="#school" type="button" role="tab" aria-controls="school" aria-selected="false">පාසල</button>
                 </li>
             </ul>
             
@@ -449,7 +520,7 @@
                 
                 <!-- Preschool -->
                 <div class="tab-pane fade" id="preschool" role="tabpanel" aria-labelledby="preschool-tab">
-                    <h3 class="mb-3">පෙර පාසැල</h3>
+                    <h3 class="mb-3">පෙර පාසල</h3>
                     
                     <!-- Year Filter -->
                     <div class="year-filter">
@@ -493,6 +564,66 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- School -->
+                <div class="tab-pane fade" id="school" role="tabpanel" aria-labelledby="school-tab">
+                    <h3 class="mb-3">පාසල</h3>
+                    
+                    <!-- Year Filter -->
+                    <div class="year-filter">
+                        <button class="btn btn-primary" onclick="switchYear('school', '2023', this)">2023</button>
+                        <button class="btn btn-outline-primary" onclick="switchYear('school', '2024', this)">2024</button>
+                        <button class="btn btn-outline-primary" onclick="switchYear('school', '2025', this)">2025</button>
+                    </div>
+                    
+                    <!-- Year Content -->
+                    <div id="school-2023" class="year-content active">
+                        <div class="row">
+                            <p>2023-10-11 - ශාන්ත අන්තෝනි ජාතික පාසලේ වැඩසටහන</p>
+                            <div class="col-md-4">
+                                <div class="card gallery-item">
+                                    <img src="/static/images/gallery/school/1/DSC_0006.jpg" class="card-img-top" alt="Preschool 2024">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card gallery-item">
+                                    <img src="/static/images/gallery/school/1/DSC_0017.jpg" class="card-img-top" alt="Preschool 2024">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card gallery-item">
+                                    <img src="/static/images/gallery/school/1/DSC_0019.jpg" class="card-img-top" alt="Preschool 2024">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card gallery-item">
+                                    <img src="/static/images/gallery/school/1/DSC_0028.jpg" class="card-img-top" alt="Preschool 2024">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card gallery-item">
+                                    <img src="/static/images/gallery/school/1/DSC_0037.jpg" class="card-img-top" alt="Preschool 2024">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="school-2025" class="year-content">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card gallery-item">
+                                    <img src="/api/placeholder/400/320" class="card-img-top" alt="Preschool 2025">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card gallery-item">
+                                    <img src="/api/placeholder/400/320" class="card-img-top" alt="Preschool 2025">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
         

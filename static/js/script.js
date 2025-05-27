@@ -276,7 +276,7 @@ function updateActiveLanguage() {
 }
 function switchYear(section, year, btn) {
   // Hide all year content for this section
-  document.querySelectorAll(`#${section}-2024, #${section}-2025`).forEach(content => {
+  document.querySelectorAll(`#${section}-2023, #${section}-2024, #${section}-2025`).forEach(content => {
       content.classList.remove('active');
   });
   

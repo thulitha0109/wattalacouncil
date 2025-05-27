@@ -492,7 +492,7 @@
 
   .main-section {
     position: relative;
-    background: url('/static/images/image1.webp') center/cover no-repeat;
+    background: url('/static/images/image1.webp') center / cover no-repeat;
     padding: 60px 0;
     color: white;
     overflow: hidden;
