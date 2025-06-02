@@ -121,29 +121,44 @@
       display: block !important;
       opacity: 1 !important;
     }
+    @media screen and (max-width: 768px) {
+      .lang-buttons{
+        flex-direction: column;
+        gap: 2.4em;
+      }
+      }
+      
   </style>
 </head>
-<body>
-  <!-- Language Selector -->
+<body>  <!-- Language Selector -->
 <div id="language-selector">
-  <!-- Top bar with two logos -->
-  <div class="lang-top-bar">
-    <img src="/static/images/wattala-council-logo.png" alt="KMC Logo" class="lang-logo-left" />
-    <!-- <img src="logo-right.png" alt="PayFast Logo" class="lang-logo-right" /> -->
-  </div>
+  <div class="container-fluid h-100 d-flex flex-column justify-content-between">
+    
+    <!-- Top bar -->
+    <div class="lang-top-bar row">
+      <div class="col-12 d-flex justify-content-start align-items-center">
+        <img src="/static/images/wattala-council-logo.png" alt="Wattala urban conucil Logo" class="lang-logo-left img-fluid" />
+      </div>
+    </div>
 
-  <!-- Center content -->
-  <div class="lang-middle">
-    <h1 class="animated-text" id="lang-welcome-text">Welcome!</h1>
-    <h2>Wattala Mabola Urban Council</h2>
-    <h2>වත්තල මාබෝල නගර සභාව</h2>
-    <h2>வத்தளை மாபோல நகரசபை</h2>
-    <p>Western Province, Sri Lanka | බස්නාහිර පළාත, ශ්‍රී ලංකාව | மேற்கு மாகாணம், இலங்கை</p>
-    <ul class="lang-buttons">
-      <li><a class="lang-btn-one" href="#" onclick="chooseLang('en'); return false;">English</a></li>
-      <li><a class="lang-btn-two" href="#" onclick="chooseLang('si'); return false;">සිංහල</a></li>
-      <li><a class="lang-btn-three" href="#" onclick="chooseLang('ta'); return false;">தமிழ்</a></li>
-    </ul>
+    <!-- Center content -->
+    <div class="row flex-grow-1 justify-content-center align-items-center text-center">
+      <div class="col-12 col-md-10 col-lg-8 lang-middle">
+        <h1 class="animated-text" id="lang-welcome-text">Welcome!</h1>
+        <h2>Wattala Mabola Urban Council</h2>
+        <h2>වත්තල මාබෝල නගර සභාව</h2>
+        <h2>வத்தளை மாபோல நகரசபை</h2>
+        <p>
+          Western Province, Sri Lanka | බස්නාහිර පළාත, ශ්‍රී ලංකාව | மேற்கு மாகாணம், இலங்கை
+        </p>
+        <ul class="lang-buttons flex-wrap justify-content-center d-flex p-2 ">
+          <li><a class="lang-btn-one" href="#" onclick="chooseLang('en'); return false;">English</a></li>
+          <li><a class="lang-btn-two" href="#" onclick="chooseLang('si'); return false;">සිංහල</a></li>
+          <li><a class="lang-btn-three mt-2" href="#" onclick="chooseLang('ta'); return false;">தமிழ்</a></li>
+        </ul>
+      </div>
+    </div>
+
   </div>
 </div>
 

@@ -74,6 +74,22 @@
     margin-bottom:  0.6em;
     
   }
+  @media  screen and (max-width: 1146px) {
+    h2, h3 {
+      font-size: var(--font-size-lg);
+    }
+    
+  }
+
+  @media  screen and (max-width: 768px) {
+    h1 {
+      font-size: var(--font-size-lg);
+    }
+    h2, h3 {
+      font-size: var(--font-size-base);
+    }
+    
+  }
   
   h4{
     font-weight: var(--font-weight-bold);
