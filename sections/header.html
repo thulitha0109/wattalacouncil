@@ -284,11 +284,9 @@
 /* Ensure proper Bootstrap classes */
 .mobile-nav {
   list-style: none;
-  padding: 20px;
 }
 
 .mobile-nav .nav-item {
-  padding: 10px 15px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -311,5 +309,10 @@
   flex-direction: column;
 }
 
+@media screen and (max-width: 768px) {
+ .nav-link {
+ font-size: var(--font-size-sm);
+  }
+}
 </style>
 
