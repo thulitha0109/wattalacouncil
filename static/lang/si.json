@@ -16,9 +16,9 @@
           "text": "සභා කළමනාකරණය",
           "sub_menu": [
             { "text": "සභාපති", "link": "chairman.md" },
-            { "text": "අනු සභාපති", "link": "vice_chairman.md" },
+            { "text": "උප සභාපති", "link": "vice_chairman.md" },
             { "text": "ලේකම්", "link": "secretary.md" },
-            { "text": "සභා නිලධාරීන්", "link": "council_officers.md" },
+            { "text": "නාගරික මන්ත්‍රී", "link": "council_officers.md" },
             { "text": "කාර්ය මණ්ඩල තොරතුරු", "link": "staff_info.md" }
           ]
         }
